@@ -1,17 +1,30 @@
-package dto;
+package entity;
 
-import java.io.Serializable;
+import dto.OrganizacijskaJedinicaDto;
+import dto.TipOgranizacijskeJediniceDto;
 
-public class OrganizacijskaJedinicaDto implements Serializable {
+import javax.persistence.*;
 
-    private static final long serialVersionUID = 1L;
+@Entity
+@Table(name = "organizacijska_jedinica", schema = "planerdogadaja")
+public class OrganizacijskaJedinica {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "sifra", nullable = false)
     private Integer sifra;
+    @Column(name = "sifra", nullable = false) // TODO: 07. 03. 2020. ispraviti u bazi 
     private String naziv;
+    @Column(name = "opis")
     private String opis;
+    @JoinColumn(name = "tip_org_jed", nullable = false)
+    @ManyToOne
     private TipOgranizacijskeJediniceDto tipOgranizacijskeJediniceDto;
+    @JoinColumn(name = "org_jed", nullable = false)
+    @ManyToOne
     private OrganizacijskaJedinicaDto organizacijskaJedinicaDto;
 
-    public OrganizacijskaJedinicaDto() {
+    public OrganizacijskaJedinica() {
         super();
     }
 

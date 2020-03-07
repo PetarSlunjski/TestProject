@@ -1,19 +1,32 @@
-package dto;
+package entity;
 
-import java.io.Serializable;
+import dto.GradDto;
+
+import javax.persistence.*;
 import java.sql.Timestamp;
 
-public class DogadajDto implements Serializable {
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "dogadaj", schema = "planerdogadaja")
+public class Dogadaj {
 
-    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "sifra", nullable = false)
     private Integer sifra;
+    @Column(name = "naziv", nullable = false) // TODO: 07. 03. 2020. ispraviti u bazi
     private String naziv;
+    @Column(name = "vrijeme_od", nullable = false) // TODO: 07. 03. 2020. ispraviti u bazi
     private Timestamp vrijemeOd;
+    @Column(name = "vrijeme_do") // TODO: 07. 03. 2020. ispraviti u bazi
     private Timestamp vrijemeDo;
+    @Column(name = "slobodan_ulaz", nullable = false, length = 2) // TODO: 07. 03. 2020.  ispraviti u bazi
     private String slobodanUlaz;
+    @JoinColumn(name = "grad", nullable = false)
+    @ManyToMany
     private GradDto gradDto;
 
-    public DogadajDto() {
+    public Dogadaj() {
         super();
     }
 
