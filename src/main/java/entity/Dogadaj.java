@@ -14,13 +14,13 @@ public class Dogadaj {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sifra", nullable = false)
     private Integer sifra;
-    @Column(name = "naziv", nullable = false) // TODO: 07. 03. 2020. ispraviti u bazi
+    @Column(name = "naziv", nullable = false)
     private String naziv;
-    @Column(name = "vrijeme_od", nullable = false) // TODO: 07. 03. 2020. ispraviti u bazi
+    @Column(name = "vrijeme_od", nullable = false)
     private Timestamp vrijemeOd;
-    @Column(name = "vrijeme_do") // TODO: 07. 03. 2020. ispraviti u bazi
+    @Column(name = "vrijeme_do")
     private Timestamp vrijemeDo;
-    @Column(name = "slobodan_ulaz", nullable = false, length = 2) // TODO: 07. 03. 2020.  ispraviti u bazi
+    @Column(name = "slobodan_ulaz", nullable = false, length = 2)
     private String slobodanUlaz;
     @JoinColumn(name = "grad", nullable = false)
     @ManyToMany

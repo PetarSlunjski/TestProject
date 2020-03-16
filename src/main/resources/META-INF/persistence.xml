@@ -3,7 +3,7 @@
              version="2.1">
     <persistence-unit name="TestProject">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <jta-data-source>TestPostgresDataSource</jta-data-source>
+        <jta-data-source>jdbc/TestPostgresDataSource</jta-data-source>
 
         <properties>
             <property name="hibernate.show_sql" value="true"/>

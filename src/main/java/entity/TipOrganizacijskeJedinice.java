@@ -10,7 +10,7 @@ public class TipOrganizacijskeJedinice {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sifra", nullable = false)
     private Integer sifra;
-    @Column(name = "naziv", nullable = false) // TODO: 07. 03. 2020. ispraviti u bazi
+    @Column(name = "naziv", nullable = false)
     private String naziv;
     @Column(name = "aktivan", nullable = false)
     private Boolean aktivan;
