@@ -21,18 +21,18 @@ public abstract class GenericDao<E, T> implements Serializable {
      * vraca entity iz DTO
      */
 
-    public abstract E formEntity(T dto);
+    protected abstract E formEntity(T dto);
 
     /**
      * vraca DTO iz entity
      */
 
-    public abstract T formDto(E dto);
+    protected abstract T formDto(E dto);
 
     /**
      * vraca listu entitia (entites transfor to dto)
      */
-    public abstract String getBasicSql();
+    protected abstract String getBasicSql();
 
     public List<T> formListDto(List<E> listEntity) {
         List<T> listDto = new ArrayList<>();
