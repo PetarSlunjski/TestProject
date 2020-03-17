@@ -100,7 +100,7 @@ public class DogadajDao extends GenericDao<Object, DogadajDto> implements Serial
     // uređivanje postojeceg događaj eniteta
     public void edit(DogadajDto dto) {
         // TODO: 17. 03. 2020. validacija
-        Dogadaj entity = formEntity(dto)
+        Dogadaj entity = formEntity(dto);
         getEntityManager().merge(entity);
         getEntityManager().flush();
     }
